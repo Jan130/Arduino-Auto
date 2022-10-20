@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="Autonomes Auto" company="" webLink="https://github.com/Jan130/Arduino-Auto" view-date="2022-10-03" view-index="0" gantt-divider-location="351" resource-divider-location="300" version="3.2.3230" locale="de_DE">
+    <description/>
+    <view zooming-state="default:7" id="gantt-chart">
+        <field id="tpd3" name="Vorgang" width="200" order="0"/>
+        <field id="tpd4" name="Anfang" width="75" order="1"/>
+        <field id="tpd5" name="Ende" width="75" order="2"/>
+        <option id="filter.completedTasks" value="false"/>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Ressource" width="210" order="0"/>
+        <field id="1" name="Rolle" width="86" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
+            <only-show-weekends value="false"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+        <date year="" month="1" date="1" type="HOLIDAY">
+            <![CDATA[Neujahr]]>
+        </date>
+        <date year="" month="5" date="1" type="HOLIDAY">
+            <![CDATA[Erster Mai, Tag der Arbeit]]>
+        </date>
+        <date year="" month="10" date="3" type="HOLIDAY">
+            <![CDATA[Tag der Deutschen Einheit]]>
+        </date>
+        <date year="" month="12" date="25" type="HOLIDAY">
+            <![CDATA[1. Weihnachts(feier)tag]]>
+        </date>
+        <date year="" month="12" date="26" type="HOLIDAY">
+            <![CDATA[2. Weihnachts(feier)tag]]>
+        </date>
+        <date year="" month="1" date="6" type="HOLIDAY">
+            <![CDATA[Heilige Drei Könige (BW, BY, ST)]]>
+        </date>
+        <date year="" month="8" date="15" type="HOLIDAY">
+            <![CDATA[Mariä Himmelfahrt  (BY, SL)]]>
+        </date>
+        <date year="" month="10" date="31" type="HOLIDAY">
+            <![CDATA[Tag der Reformation  (BB, MV, SN, ST, TH)]]>
+        </date>
+        <date year="" month="11" date="1" type="HOLIDAY">
+            <![CDATA[Allerheiligen (BW, BY, NW, RP, SL)]]>
+        </date>
+        <date year="2008" month="3" date="21" type="HOLIDAY">
+            <![CDATA[Karfreitag]]>
+        </date>
+        <date year="2008" month="3" date="24" type="HOLIDAY">
+            <![CDATA[Ostermontag]]>
+        </date>
+        <date year="2008" month="5" date="12" type="HOLIDAY">
+            <![CDATA[Pfingstmontag]]>
+        </date>
+        <date year="2009" month="4" date="10" type="HOLIDAY">
+            <![CDATA[Karfreitag]]>
+        </date>
+        <date year="2009" month="4" date="13" type="HOLIDAY">
+            <![CDATA[Ostermontag]]>
+        </date>
+        <date year="2009" month="5" date="21" type="HOLIDAY">
+            <![CDATA[Christi Himmelfahrt]]>
+        </date>
+        <date year="2009" month="6" date="1" type="HOLIDAY">
+            <![CDATA[Pfingstmontag]]>
+        </date>
+        <date year="2010" month="4" date="2" type="HOLIDAY">
+            <![CDATA[Karfreitag]]>
+        </date>
+        <date year="2010" month="4" date="5" type="HOLIDAY">
+            <![CDATA[Ostermontag]]>
+        </date>
+        <date year="2010" month="5" date="13" type="HOLIDAY">
+            <![CDATA[Christi Himmelfahrt]]>
+        </date>
+        <date year="2010" month="5" date="24" type="HOLIDAY">
+            <![CDATA[Pfingstmontag]]>
+        </date>
+        <date year="2011" month="4" date="22" type="HOLIDAY">
+            <![CDATA[Karfreitag]]>
+        </date>
+        <date year="2011" month="4" date="25" type="HOLIDAY">
+            <![CDATA[Ostermontag]]>
+        </date>
+        <date year="2011" month="6" date="2" type="HOLIDAY">
+            <![CDATA[Christi Himmelfahrt]]>
+        </date>
+        <date year="2011" month="6" date="13" type="HOLIDAY">
+            <![CDATA[Pfingstmontag]]>
+        </date>
+        <date year="2012" month="4" date="6" type="HOLIDAY">
+            <![CDATA[Karfreitag]]>
+        </date>
+        <date year="2012" month="4" date="9" type="HOLIDAY">
+            <![CDATA[Ostermontag]]>
+        </date>
+        <date year="2012" month="5" date="17" type="HOLIDAY">
+            <![CDATA[Christi Himmelfahrt]]>
+        </date>
+        <date year="2012" month="5" date="28" type="HOLIDAY">
+            <![CDATA[Pfingstmontag]]>
+        </date>
+        <date year="2013" month="3" date="29" type="HOLIDAY">
+            <![CDATA[Karfreitag]]>
+        </date>
+        <date year="2013" month="4" date="1" type="HOLIDAY">
+            <![CDATA[Ostermontag]]>
+        </date>
+        <date year="2013" month="5" date="9" type="HOLIDAY">
+            <![CDATA[Christi Himmelfahrt]]>
+        </date>
+        <date year="2013" month="5" date="20" type="HOLIDAY">
+            <![CDATA[Pfingstmontag]]>
+        </date>
+        <date year="2014" month="4" date="18" type="HOLIDAY">
+            <![CDATA[Karfreitag]]>
+        </date>
+        <date year="2014" month="4" date="21" type="HOLIDAY">
+            <![CDATA[Ostermontag]]>
+        </date>
+        <date year="2014" month="5" date="29" type="HOLIDAY">
+            <![CDATA[Christi Himmelfahrt]]>
+        </date>
+        <date year="2014" month="6" date="9" type="HOLIDAY">
+            <![CDATA[Pfingstmontag]]>
+        </date>
+        <date year="2015" month="4" date="3" type="HOLIDAY">
+            <![CDATA[Karfreitag]]>
+        </date>
+        <date year="2015" month="4" date="6" type="HOLIDAY">
+            <![CDATA[Ostermontag]]>
+        </date>
+        <date year="2015" month="5" date="14" type="HOLIDAY">
+            <![CDATA[Christi Himmelfahrt]]>
+        </date>
+        <date year="2015" month="5" date="25" type="HOLIDAY">
+            <![CDATA[Pfingstmontag]]>
+        </date>
+        <date year="2016" month="3" date="25" type="HOLIDAY">
+            <![CDATA[Karfreitag]]>
+        </date>
+        <date year="2016" month="3" date="28" type="HOLIDAY">
+            <![CDATA[Ostermontag]]>
+        </date>
+        <date year="2016" month="5" date="5" type="HOLIDAY">
+            <![CDATA[Christi Himmelfahrt]]>
+        </date>
+        <date year="2016" month="5" date="16" type="HOLIDAY">
+            <![CDATA[Pfingstmontag]]>
+        </date>
+        <date year="2017" month="4" date="14" type="HOLIDAY">
+            <![CDATA[Karfreitag]]>
+        </date>
+        <date year="2017" month="4" date="17" type="HOLIDAY">
+            <![CDATA[Ostermontag]]>
+        </date>
+        <date year="2017" month="5" date="25" type="HOLIDAY">
+            <![CDATA[Christi Himmelfahrt]]>
+        </date>
+        <date year="2017" month="6" date="5" type="HOLIDAY">
+            <![CDATA[Pfingstmontag]]>
+        </date>
+        <date year="2017" month="10" date="31" type="HOLIDAY">
+            <![CDATA[Tag der Reformation]]>
+        </date>
+        <date year="2018" month="3" date="30" type="HOLIDAY">
+            <![CDATA[Karfreitag]]>
+        </date>
+        <date year="2018" month="4" date="2" type="HOLIDAY">
+            <![CDATA[Ostermontag]]>
+        </date>
+        <date year="2018" month="5" date="10" type="HOLIDAY">
+            <![CDATA[Christi Himmelfahrt]]>
+        </date>
+        <date year="2018" month="5" date="21" type="HOLIDAY">
+            <![CDATA[Pfingstmontag]]>
+        </date>
+        <date year="2019" month="4" date="19" type="HOLIDAY">
+            <![CDATA[Karfreitag]]>
+        </date>
+        <date year="2019" month="4" date="22" type="HOLIDAY">
+            <![CDATA[Ostermontag]]>
+        </date>
+        <date year="2019" month="5" date="30" type="HOLIDAY">
+            <![CDATA[Christi Himmelfahrt]]>
+        </date>
+        <date year="2019" month="6" date="10" type="HOLIDAY">
+            <![CDATA[Pfingstmontag]]>
+        </date>
+        <date year="2020" month="4" date="10" type="HOLIDAY">
+            <![CDATA[Karfreitag]]>
+        </date>
+        <date year="2020" month="4" date="13" type="HOLIDAY">
+            <![CDATA[Ostermontag]]>
+        </date>
+        <date year="2020" month="5" date="21" type="HOLIDAY">
+            <![CDATA[Christi Himmelfahrt]]>
+        </date>
+        <date year="2020" month="6" date="1" type="HOLIDAY">
+            <![CDATA[Pfingstmontag]]>
+        </date>
+        <date year="2021" month="4" date="2" type="HOLIDAY">
+            <![CDATA[Karfreitag]]>
+        </date>
+        <date year="2021" month="4" date="4" type="HOLIDAY">
+            <![CDATA[Ostermontag]]>
+        </date>
+        <date year="2021" month="5" date="13" type="HOLIDAY">
+            <![CDATA[Christi Himmelfahrt]]>
+        </date>
+        <date year="2021" month="5" date="24" type="HOLIDAY">
+            <![CDATA[Pfingstmontag]]>
+        </date>
+        <date year="2022" month="4" date="15" type="HOLIDAY">
+            <![CDATA[Karfreitag]]>
+        </date>
+        <date year="2022" month="4" date="18" type="HOLIDAY">
+            <![CDATA[Ostermontag]]>
+        </date>
+        <date year="2022" month="5" date="26" type="HOLIDAY">
+            <![CDATA[Christi Himmelfahrt]]>
+        </date>
+        <date year="2022" month="6" date="6" type="HOLIDAY">
+            <![CDATA[Pfingstmontag]]>
+        </date>
+        <date year="2023" month="4" date="7" type="HOLIDAY">
+            <![CDATA[Karfreitag]]>
+        </date>
+        <date year="2023" month="4" date="10" type="HOLIDAY">
+            <![CDATA[Ostermontag]]>
+        </date>
+        <date year="2023" month="5" date="18" type="HOLIDAY">
+            <![CDATA[Christi Himmelfahrt]]>
+        </date>
+        <date year="2025" month="5" date="5" type="HOLIDAY">
+            <![CDATA[Pfingstmontag]]>
+        </date>
+        <date year="2024" month="3" date="29" type="HOLIDAY">
+            <![CDATA[Karfreitag]]>
+        </date>
+        <date year="2024" month="4" date="1" type="HOLIDAY">
+            <![CDATA[Ostermontag]]>
+        </date>
+        <date year="2024" month="5" date="9" type="HOLIDAY">
+            <![CDATA[Christi Himmelfahrt]]>
+        </date>
+        <date year="2024" month="5" date="20" type="HOLIDAY">
+            <![CDATA[Pfingstmontag]]>
+        </date>
+        <date year="2025" month="4" date="18" type="HOLIDAY">
+            <![CDATA[Karfreitag]]>
+        </date>
+        <date year="2025" month="4" date="21" type="HOLIDAY">
+            <![CDATA[Ostermontag]]>
+        </date>
+        <date year="2025" month="5" date="29" type="HOLIDAY">
+            <![CDATA[Christi Himmelfahrt]]>
+        </date>
+        <date year="2025" month="6" date="9" type="HOLIDAY">
+            <![CDATA[Pfingstmontag]]>
+        </date>
+        <date year="2026" month="4" date="3" type="HOLIDAY">
+            <![CDATA[Karfreitag]]>
+        </date>
+        <date year="2026" month="4" date="6" type="HOLIDAY">
+            <![CDATA[Ostermontag]]>
+        </date>
+        <date year="2026" month="5" date="29" type="HOLIDAY">
+            <![CDATA[Christi Himmelfahrt]]>
+        </date>
+        <date year="2026" month="5" date="25" type="HOLIDAY">
+            <![CDATA[Pfingstmontag]]>
+        </date>
+        <date year="2027" month="3" date="26" type="HOLIDAY">
+            <![CDATA[Karfreitag]]>
+        </date>
+        <date year="2027" month="3" date="29" type="HOLIDAY">
+            <![CDATA[Ostermontag]]>
+        </date>
+        <date year="2027" month="5" date="14" type="HOLIDAY">
+            <![CDATA[Christi Himmelfahrt]]>
+        </date>
+        <date year="2027" month="3" date="17" type="HOLIDAY">
+            <![CDATA[Pfingstmontag]]>
+        </date>
+        <date year="2008" month="3" date="20" type="HOLIDAY">
+            <![CDATA[Gründonnerstag (BW)]]>
+        </date>
+        <date year="2008" month="5" date="22" type="HOLIDAY">
+            <![CDATA[Fronleichnam  (BW, BY, HE, NW, RP, SL)]]>
+        </date>
+        <date year="2008" month="11" date="19" type="HOLIDAY">
+            <![CDATA[Buß- und Bettag  (SN)]]>
+        </date>
+        <date year="2009" month="4" date="9" type="HOLIDAY">
+            <![CDATA[Gründonnerstag (BW)]]>
+        </date>
+        <date year="2009" month="6" date="11" type="HOLIDAY">
+            <![CDATA[Fronleichnam  (BW, BY, HE, NW, RP, SL)]]>
+        </date>
+        <date year="2009" month="11" date="18" type="HOLIDAY">
+            <![CDATA[Buß- und Bettag  (SN)]]>
+        </date>
+        <date year="2010" month="4" date="1" type="HOLIDAY">
+            <![CDATA[Gründonnerstag (BW)]]>
+        </date>
+        <date year="2010" month="6" date="3" type="HOLIDAY">
+            <![CDATA[Fronleichnam  (BW, BY, HE, NW, RP, SL)]]>
+        </date>
+        <date year="2010" month="11" date="17" type="HOLIDAY">
+            <![CDATA[Buß- und Bettag  (SN)]]>
+        </date>
+        <date year="2011" month="4" date="21" type="HOLIDAY">
+            <![CDATA[Gründonnerstag (BW)]]>
+        </date>
+        <date year="2011" month="6" date="23" type="HOLIDAY">
+            <![CDATA[Fronleichnam  (BW, BY, HE, NW, RP, SL)]]>
+        </date>
+        <date year="2011" month="11" date="16" type="HOLIDAY">
+            <![CDATA[Buß- und Bettag  (SN)]]>
+        </date>
+        <date year="2012" month="4" date="5" type="HOLIDAY">
+            <![CDATA[Gründonnerstag (BW)]]>
+        </date>
+        <date year="2012" month="6" date="7" type="HOLIDAY">
+            <![CDATA[Fronleichnam  (BW, BY, HE, NW, RP, SL)]]>
+        </date>
+        <date year="2012" month="11" date="21" type="HOLIDAY">
+            <![CDATA[Buß- und Bettag  (SN)]]>
+        </date>
+        <date year="2013" month="3" date="28" type="HOLIDAY">
+            <![CDATA[Gründonnerstag (BW)]]>
+        </date>
+        <date year="2013" month="5" date="30" type="HOLIDAY">
+            <![CDATA[Fronleichnam  (BW, BY, HE, NW, RP, SL)]]>
+        </date>
+        <date year="2013" month="11" date="20" type="HOLIDAY">
+            <![CDATA[Buß- und Bettag  (SN)]]>
+        </date>
+        <date year="2014" month="4" date="17" type="HOLIDAY">
+            <![CDATA[Gründonnerstag (BW)]]>
+        </date>
+        <date year="2014" month="6" date="19" type="HOLIDAY">
+            <![CDATA[Fronleichnam  (BW, BY, HE, NW, RP, SL)]]>
+        </date>
+        <date year="2014" month="11" date="19" type="HOLIDAY">
+            <![CDATA[Buß- und Bettag  (SN)]]>
+        </date>
+        <date year="2015" month="4" date="2" type="HOLIDAY">
+            <![CDATA[Gründonnerstag (BW)]]>
+        </date>
+        <date year="2015" month="6" date="4" type="HOLIDAY">
+            <![CDATA[Fronleichnam  (BW, BY, HE, NW, RP, SL)]]>
+        </date>
+        <date year="2015" month="11" date="18" type="HOLIDAY">
+            <![CDATA[Buß- und Bettag  (SN)]]>
+        </date>
+        <date year="2016" month="3" date="24" type="HOLIDAY">
+            <![CDATA[Gründonnerstag (BW)]]>
+        </date>
+        <date year="2016" month="5" date="26" type="HOLIDAY">
+            <![CDATA[Fronleichnam  (BW, BY, HE, NW, RP, SL)]]>
+        </date>
+        <date year="2016" month="11" date="16" type="HOLIDAY">
+            <![CDATA[Buß- und Bettag  (SN)]]>
+        </date>
+        <date year="2017" month="4" date="13" type="HOLIDAY">
+            <![CDATA[Gründonnerstag (BW)]]>
+        </date>
+        <date year="2017" month="6" date="15" type="HOLIDAY">
+            <![CDATA[Fronleichnam (BW, BY, HE, NW, RP, SL, SN, TH)]]>
+        </date>
+        <date year="2017" month="11" date="22" type="HOLIDAY">
+            <![CDATA[Buß- und Bettag (SN)]]>
+        </date>
+        <date year="2018" month="3" date="29" type="HOLIDAY">
+            <![CDATA[Gründonnerstag (BW)]]>
+        </date>
+        <date year="2018" month="5" date="31" type="HOLIDAY">
+            <![CDATA[Fronleichnam (BW, BY, HE, NW, RP, SL, SN, TH)]]>
+        </date>
+        <date year="2018" month="11" date="21" type="HOLIDAY">
+            <![CDATA[Buß- und Bettag (SN)]]>
+        </date>
+        <date year="2019" month="4" date="18" type="HOLIDAY">
+            <![CDATA[Gründonnerstag (BW)]]>
+        </date>
+        <date year="2019" month="6" date="20" type="HOLIDAY">
+            <![CDATA[Fronleichnam (BW, BY, HE, NW, RP, SL, SN, TH)]]>
+        </date>
+        <date year="2019" month="11" date="20" type="HOLIDAY">
+            <![CDATA[Buß- und Bettag (SN)]]>
+        </date>
+        <date year="2020" month="4" date="9" type="HOLIDAY">
+            <![CDATA[Gründonnerstag (BW)]]>
+        </date>
+        <date year="2020" month="6" date="11" type="HOLIDAY">
+            <![CDATA[Fronleichnam (BW, BY, HE, NW, RP, SL, SN, TH)]]>
+        </date>
+        <date year="2020" month="11" date="18" type="HOLIDAY">
+            <![CDATA[Buß- und Bettag (SN)]]>
+        </date>
+        <date year="2021" month="4" date="1" type="HOLIDAY">
+            <![CDATA[Gründonnerstag (BW)]]>
+        </date>
+        <date year="2021" month="6" date="3" type="HOLIDAY">
+            <![CDATA[Fronleichnam (BW, BY, HE, NW, RP, SL, SN, TH)]]>
+        </date>
+        <date year="2021" month="11" date="17" type="HOLIDAY">
+            <![CDATA[Buß- und Bettag (SN)]]>
+        </date>
+        <date year="2022" month="4" date="14" type="HOLIDAY">
+            <![CDATA[Gründonnerstag (BW)]]>
+        </date>
+        <date year="2022" month="6" date="16" type="HOLIDAY">
+            <![CDATA[Fronleichnam (BW, BY, HE, NW, RP, SL, SN, TH)]]>
+        </date>
+        <date year="2022" month="11" date="16" type="HOLIDAY">
+            <![CDATA[Buß- und Bettag (SN)]]>
+        </date>
+        <date year="2023" month="4" date="6" type="HOLIDAY">
+            <![CDATA[Gründonnerstag (BW)]]>
+        </date>
+        <date year="2023" month="6" date="8" type="HOLIDAY">
+            <![CDATA[Fronleichnam (BW, BY, HE, NW, RP, SL, SN, TH)]]>
+        </date>
+        <date year="2023" month="11" date="22" type="HOLIDAY">
+            <![CDATA[Buß- und Bettag (SN)]]>
+        </date>
+        <date year="2024" month="3" date="28" type="HOLIDAY">
+            <![CDATA[Gründonnerstag (BW)]]>
+        </date>
+        <date year="2024" month="5" date="30" type="HOLIDAY">
+            <![CDATA[Fronleichnam (BW, BY, HE, NW, RP, SL, SN, TH)]]>
+        </date>
+        <date year="2024" month="11" date="20" type="HOLIDAY">
+            <![CDATA[Buß- und Bettag (SN)]]>
+        </date>
+        <date year="2025" month="4" date="17" type="HOLIDAY">
+            <![CDATA[Gründonnerstag (BW)]]>
+        </date>
+        <date year="2025" month="6" date="19" type="HOLIDAY">
+            <![CDATA[Fronleichnam (BW, BY, HE, NW, RP, SL, SN, TH)]]>
+        </date>
+        <date year="2025" month="11" date="19" type="HOLIDAY">
+            <![CDATA[Buß- und Bettag (SN)]]>
+        </date>
+        <date year="2026" month="4" date="2" type="HOLIDAY">
+            <![CDATA[Gründonnerstag (BW)]]>
+        </date>
+        <date year="2026" month="6" date="4" type="HOLIDAY">
+            <![CDATA[Fronleichnam (BW, BY, HE, NW, RP, SL, SN, TH)]]>
+        </date>
+        <date year="2026" month="11" date="18" type="HOLIDAY">
+            <![CDATA[Buß- und Bettag (SN)]]>
+        </date>
+        <date year="2027" month="3" date="25" type="HOLIDAY">
+            <![CDATA[Gründonnerstag (BW)]]>
+        </date>
+        <date year="2027" month="5" date="27" type="HOLIDAY">
+            <![CDATA[Fronleichnam (BW, BY, HE, NW, RP, SL, SN, TH)]]>
+        </date>
+        <date year="2027" month="11" date="17" type="HOLIDAY">
+            <![CDATA[Buß- und Bettag (SN)]]>
+        </date>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="0" name="Projekt" color="#8cb6ce" meeting="false" start="2022-10-20" duration="48" complete="0" thirdDate="2022-10-20" thirdDate-constraint="0" expand="true"/>
+        <task id="1" name="Hardware" color="#8cb6ce" meeting="false" start="2022-10-27" duration="8" complete="0" thirdDate="2022-10-20" thirdDate-constraint="0" expand="true">
+            <depend id="3" type="2" difference="0" hardness="Strong"/>
+            <task id="4" name="Anbau GPS-Sensor" color="#8cb6ce" meeting="false" start="2022-10-27" duration="3" complete="0" thirdDate="2022-10-11" thirdDate-constraint="0" expand="true">
+                <depend id="5" type="2" difference="0" hardness="Strong"/>
+                <depend id="6" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="5" name="Anbau weitere Ultraschall Sensoren" color="#8cb6ce" meeting="false" start="2022-11-03" duration="5" complete="0" thirdDate="2022-10-11" thirdDate-constraint="0" expand="true">
+                <depend id="7" type="2" difference="0" hardness="Strong"/>
+            </task>
+        </task>
+        <task id="2" name="Software" color="#8cb6ce" meeting="false" start="2022-11-03" duration="19" complete="0" thirdDate="2022-10-20" thirdDate-constraint="0" expand="true">
+            <depend id="3" type="2" difference="0" hardness="Strong"/>
+            <task id="6" name="Aufzeichnung GPS-Strecke" color="#8cb6ce" meeting="false" start="2022-11-03" duration="19" complete="0" thirdDate="2022-11-11" thirdDate-constraint="0" expand="true"/>
+            <task id="7" name="Implementation mehrerer Ultraschall Sensoren" color="#8cb6ce" meeting="false" start="2022-11-10" duration="14" complete="0" thirdDate="2022-11-11" thirdDate-constraint="0" expand="true"/>
+        </task>
+        <task id="3" name="Darstellung der Daten" color="#8cb6ce" meeting="false" start="2022-12-01" duration="21" complete="0" thirdDate="2022-10-20" thirdDate-constraint="0" expand="true">
+            <task id="8" name="Suche geeigneter Programme" color="#8cb6ce" meeting="false" start="2022-12-01" duration="10" complete="0" thirdDate="2022-12-09" thirdDate-constraint="0" expand="true">
+                <depend id="9" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="9" name="Aufbau eines Workflows" color="#8cb6ce" meeting="false" start="2022-12-15" duration="5" complete="0" thirdDate="2022-12-09" thirdDate-constraint="0" expand="true">
+                <depend id="10" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="10" name="Erstellen von Beispielen" color="#8cb6ce" meeting="false" start="2022-12-22" duration="6" complete="0" thirdDate="2022-12-09" thirdDate-constraint="0" expand="true"/>
+        </task>
+    </tasks>
+    <resources>
+        <resource id="0" name="Johannes Zaunrith" function="Default:0" contacts="" phone=""/>
+        <resource id="1" name="Jan Spennemann" function="Default:0" contacts="" phone=""/>
+        <resource id="2" name="Jonas Berger" function="Default:0" contacts="" phone=""/>
+    </resources>
+    <allocations/>
+    <vacations/>
+    <previous/>
+    <roles roleset-name="Default"/>
+</project>
