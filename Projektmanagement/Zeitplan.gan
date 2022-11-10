@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Autonomes Auto" company="" webLink="https://github.com/Jan130/Arduino-Auto" view-date="2022-10-03" view-index="0" gantt-divider-location="351" resource-divider-location="300" version="3.2.3230" locale="de_DE">
+<?xml version="1.0" encoding="UTF-8"?><project name="Autonomes Auto" company="" webLink="https://github.com/Jan130/Arduino-Auto" view-date="2022-11-08" view-index="0" gantt-divider-location="351" resource-divider-location="300" version="3.2.3230" locale="de_DE">
     <description/>
-    <view zooming-state="default:7" id="gantt-chart">
+    <view zooming-state="default:3" id="gantt-chart">
         <field id="tpd3" name="Vorgang" width="200" order="0"/>
         <field id="tpd4" name="Anfang" width="75" order="1"/>
         <field id="tpd5" name="Ende" width="75" order="2"/>
@@ -481,30 +481,31 @@
             <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
-        <task id="0" name="Projekt" color="#8cb6ce" meeting="false" start="2022-10-20" duration="48" complete="0" thirdDate="2022-10-20" thirdDate-constraint="0" expand="true"/>
-        <task id="1" name="Hardware" color="#8cb6ce" meeting="false" start="2022-10-27" duration="8" complete="0" thirdDate="2022-10-20" thirdDate-constraint="0" expand="true">
-            <depend id="3" type="2" difference="0" hardness="Strong"/>
-            <task id="4" name="Anbau GPS-Sensor" color="#8cb6ce" meeting="false" start="2022-10-27" duration="3" complete="0" thirdDate="2022-10-11" thirdDate-constraint="0" expand="true">
-                <depend id="5" type="2" difference="0" hardness="Strong"/>
-                <depend id="6" type="2" difference="0" hardness="Strong"/>
+        <task id="0" name="Projekt" color="#8cb6ce" meeting="false" start="2022-11-10" duration="29" complete="0" thirdDate="2022-10-20" thirdDate-constraint="0" expand="true">
+            <task id="1" name="Hardware" color="#8cb6ce" meeting="false" start="2022-11-10" duration="9" complete="0" thirdDate="2022-10-20" thirdDate-constraint="0" expand="true">
+                <depend id="3" type="2" difference="0" hardness="Strong"/>
+                <task id="5" name="Anbau weiterer Ultraschall Sensoren" color="#8cb6ce" meeting="false" start="2022-11-10" duration="4" complete="0" thirdDate="2022-10-11" thirdDate-constraint="0" expand="true">
+                    <depend id="4" type="2" difference="0" hardness="Strong"/>
+                    <depend id="7" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="4" name="Anbau GPS-Sensor" color="#8cb6ce" meeting="false" start="2022-11-17" duration="5" complete="0" thirdDate="2022-10-11" thirdDate-constraint="0" expand="true">
+                    <depend id="6" type="2" difference="0" hardness="Strong"/>
+                </task>
             </task>
-            <task id="5" name="Anbau weitere Ultraschall Sensoren" color="#8cb6ce" meeting="false" start="2022-11-03" duration="5" complete="0" thirdDate="2022-10-11" thirdDate-constraint="0" expand="true">
-                <depend id="7" type="2" difference="0" hardness="Strong"/>
+            <task id="2" name="Software" color="#8cb6ce" meeting="false" start="2022-11-17" duration="15" complete="0" thirdDate="2022-10-20" thirdDate-constraint="0" expand="true">
+                <depend id="3" type="2" difference="0" hardness="Strong"/>
+                <depend id="8" type="2" difference="0" hardness="Strong"/>
+                <task id="7" name="Implementation mehrerer Ultraschall Sensoren" color="#8cb6ce" meeting="false" start="2022-11-17" duration="5" complete="0" thirdDate="2022-11-11" thirdDate-constraint="0" expand="true"/>
+                <task id="6" name="Aufzeichnung GPS-Strecke" color="#8cb6ce" meeting="false" start="2022-11-24" duration="10" complete="0" thirdDate="2022-11-11" thirdDate-constraint="0" expand="true"/>
             </task>
-        </task>
-        <task id="2" name="Software" color="#8cb6ce" meeting="false" start="2022-11-03" duration="19" complete="0" thirdDate="2022-10-20" thirdDate-constraint="0" expand="true">
-            <depend id="3" type="2" difference="0" hardness="Strong"/>
-            <task id="6" name="Aufzeichnung GPS-Strecke" color="#8cb6ce" meeting="false" start="2022-11-03" duration="19" complete="0" thirdDate="2022-11-11" thirdDate-constraint="0" expand="true"/>
-            <task id="7" name="Implementation mehrerer Ultraschall Sensoren" color="#8cb6ce" meeting="false" start="2022-11-10" duration="14" complete="0" thirdDate="2022-11-11" thirdDate-constraint="0" expand="true"/>
-        </task>
-        <task id="3" name="Darstellung der Daten" color="#8cb6ce" meeting="false" start="2022-12-01" duration="21" complete="0" thirdDate="2022-10-20" thirdDate-constraint="0" expand="true">
-            <task id="8" name="Suche geeigneter Programme" color="#8cb6ce" meeting="false" start="2022-12-01" duration="10" complete="0" thirdDate="2022-12-09" thirdDate-constraint="0" expand="true">
-                <depend id="9" type="2" difference="0" hardness="Strong"/>
+            <task id="3" name="Darstellung der Daten" color="#8cb6ce" meeting="false" start="2022-12-08" duration="10" complete="0" thirdDate="2022-10-20" thirdDate-constraint="0" expand="true">
+                <task id="8" name="Suche geeigneter Programme" color="#8cb6ce" meeting="false" start="2022-12-08" duration="5" complete="0" thirdDate="2022-12-09" thirdDate-constraint="0" expand="true">
+                    <depend id="9" type="2" difference="0" hardness="Strong"/>
+                    <depend id="10" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="9" name="Aufbau eines Workflows" color="#8cb6ce" meeting="false" start="2022-12-15" duration="5" complete="0" thirdDate="2022-12-09" thirdDate-constraint="0" expand="true"/>
+                <task id="10" name="Erstellen von Beispielen" color="#8cb6ce" meeting="false" start="2022-12-15" duration="5" complete="0" thirdDate="2022-12-09" thirdDate-constraint="0" expand="true"/>
             </task>
-            <task id="9" name="Aufbau eines Workflows" color="#8cb6ce" meeting="false" start="2022-12-15" duration="5" complete="0" thirdDate="2022-12-09" thirdDate-constraint="0" expand="true">
-                <depend id="10" type="2" difference="0" hardness="Strong"/>
-            </task>
-            <task id="10" name="Erstellen von Beispielen" color="#8cb6ce" meeting="false" start="2022-12-22" duration="6" complete="0" thirdDate="2022-12-09" thirdDate-constraint="0" expand="true"/>
         </task>
     </tasks>
     <resources>
@@ -512,7 +513,14 @@
         <resource id="1" name="Jan Spennemann" function="Default:0" contacts="" phone=""/>
         <resource id="2" name="Jonas Berger" function="Default:0" contacts="" phone=""/>
     </resources>
-    <allocations/>
+    <allocations>
+        <allocation task-id="1" resource-id="0" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="3" resource-id="0" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="2" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="3" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="1" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="3" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
+    </allocations>
     <vacations/>
     <previous/>
     <roles roleset-name="Default"/>
