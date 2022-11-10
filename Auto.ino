@@ -14,7 +14,14 @@ int lf_back = 8;
 int echo_pin = 22;
 int trigger_pin = 23;
 long distance;
-long last_distance;
+
+int echo_pin_l = 30;
+int trigger_pin_l = 31;
+long distance_l;
+
+int echo_pin_r = 32;
+int trigger_pin_r = 33;
+long distance_r;
 
 // Servo
 int servo_pin = 24;
@@ -26,11 +33,12 @@ const int right_angle = 114;
 const int right_right_angle = 145;
 
 // Speeds
-int drive_speed = 150;
-int turn_speed = 150;
+int drive_speed = 255;
+int turn_speed = 255;
 
 // Times
 int turn_duration = 400;
+int short_turn_duration = 200;
 
 void setup() {
   pinMode(rb_front, OUTPUT);
@@ -38,29 +46,44 @@ void setup() {
   pinMode(rf_back, OUTPUT);
   pinMode(rf_front, OUTPUT);
   pinMode(lb_back, OUTPUT);
-  pinMode(lb_front, INPUT); 
+  pinMode(lb_front, INPUT);
   pinMode(lf_front, OUTPUT);
   pinMode(lf_back, OUTPUT);
 
   pinMode(echo_pin, INPUT);
   pinMode(trigger_pin, OUTPUT);
+  pinMode(echo_pin_l, INPUT);
+  pinMode(trigger_pin_l, OUTPUT);
+  pinMode(echo_pin_r, INPUT);
+  pinMode(trigger_pin_r, OUTPUT);
 
   servo.attach(servo_pin);
   servo.write(middle_angle);
 
   Serial1.begin(9600);
-
-  last_distance = measureDistance();
 }
 
 void loop() {
   servo.write(middle_angle);
   unsigned long driveStart = millis();
-  while(measureSafeDistance() > 20){
+
+  // Vorwärts fahren, solange nichts im Weg ist
+  while (measureDistance() > 20) {
     driveFront(drive_speed);
-    if(millis() - driveStart > 4000){
+
+    // Seitlich auf Wände kontrollieren
+    /*if (measureDistance_l() < 10) {
+      turnRight(turn_speed);
+      delay(short_turn_duration);
+    } else*/ if (measureDistance_r() < 10) {
+      turnLeft(turn_speed);
+      delay(short_turn_duration);
+    }
+    
+    // Nach einer zeit umschauen
+    if (millis() - driveStart > 4000) {
       stop();
-      
+
       servo.write(left_left_angle);
       delay(500);
       long distance_left_left = measureDistance();
@@ -70,17 +93,19 @@ void loop() {
 
       servo.write(middle_angle);
 
-      if(distance_left_left < 20){
+      if (distance_left_left < 20) {
         turnRight(turn_speed);
-      } else if(distance_right_right < 20){
+      } else if (distance_right_right < 20) {
         turnLeft(turn_speed);
       }
       delay(turn_duration);
       driveStart = millis();
     }
   }
+
+  // Wenn etwas im Weg ist...
   stop();
-  
+
   servo.write(left_left_angle);
   delay(500);
   long distance_left_left = measureDistance();
@@ -99,12 +124,8 @@ void loop() {
   //delay(500);
 
   servo.write(middle_angle);
-  Serial1.print("Links: ");
-  Serial1.println(distance_left);
-  Serial1.print("Rechts: ");
-  Serial1.println(distance_right);
 
-  if((distance_right + distance_right_right) / 2 > (distance_left + distance_left_left) / 2){
+  if ((distance_right + distance_right_right) / 2 > (distance_left + distance_left_left) / 2) {
     turnRight(turn_speed);
   } else {
     turnLeft(turn_speed);
@@ -114,7 +135,7 @@ void loop() {
 
 void driveFront(int speed) {
   stop();
-  if(speed > 0 || speed <= 255) {
+  if (speed > 0 || speed <= 255) {
     analogWrite(rf_front, speed);
     analogWrite(rb_front, speed);
     analogWrite(lf_front, speed);
@@ -124,7 +145,7 @@ void driveFront(int speed) {
 
 void driveBack(int speed) {
   stop();
-  if(speed > 0 || speed <= 255) {
+  if (speed > 0 || speed <= 255) {
     analogWrite(rf_back, speed);
     analogWrite(rb_back, speed);
     analogWrite(lf_back, speed);
@@ -151,7 +172,7 @@ void turnLeft(int speed) {
   analogWrite(lf_back, speed);
 }
 
-void turnRight(int speed){
+void turnRight(int speed) {
   stop();
   analogWrite(rb_back, speed);
   analogWrite(rf_back, speed);
@@ -159,28 +180,50 @@ void turnRight(int speed){
   analogWrite(lf_front, speed);
 }
 
-long measureDistance(){
+long measureDistance() {
   digitalWrite(trigger_pin, LOW);
   delayMicroseconds(2);
   digitalWrite(trigger_pin, HIGH);
   delayMicroseconds(10);
   digitalWrite(trigger_pin, LOW);
-  
+
   long t = 0;
   t = pulseIn(echo_pin, HIGH);
-  distance = (t/2) * 0.03432;
+  distance = (t / 2) * 0.03432;
 
+  Serial1.print("Vorne: ");
   Serial1.println(distance);
   return distance;
 }
 
-long measureSafeDistance(){
-  long d = measureDistance();
-  if(abs(d - last_distance) > 30){
-    last_distance = d;
-    d = measureSafeDistance();
-  } else {
-    last_distance = d;
-  }
-  return d;
+long measureDistance_l() {
+  digitalWrite(trigger_pin_l, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigger_pin_l, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigger_pin_l, LOW);
+
+  long t = 0;
+  t = pulseIn(echo_pin_l, HIGH);
+  distance = (t / 2) * 0.03432;
+
+  Serial1.print("Links: ");
+  Serial1.println(distance);
+  return distance;
+}
+
+long measureDistance_r() {
+  digitalWrite(trigger_pin_r, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigger_pin_r, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigger_pin_r, LOW);
+
+  long t = 0;
+  t = pulseIn(echo_pin_r, HIGH);
+  distance = (t / 2) * 0.03432;
+
+  Serial1.print("Rechts: ");
+  Serial1.println(distance);
+  return distance;
 }
