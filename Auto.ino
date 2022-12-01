@@ -34,11 +34,15 @@ const int right_right_angle = 145;
 
 // Speeds
 int drive_speed = 255;
-int turn_speed = 255;
+int turn_speed = 200;
 
 // Times
-int turn_duration = 400;
+int turn_duration = 300;
 int short_turn_duration = 200;
+
+// GPS
+unsigned char gps_buffer[64];
+int gps_count = 0;
 
 void setup() {
   pinMode(rb_front, OUTPUT);
@@ -62,6 +66,10 @@ void setup() {
 
   // Bluetooth
   Serial1.begin(9600);
+  Serial1.println("Serial communication started");
+
+  // GPS
+  Serial3.begin(9600);
 }
 
 void loop() {
@@ -69,14 +77,14 @@ void loop() {
   unsigned long driveStart = millis();
 
   // Vorwärts fahren, solange nichts im Weg ist
-  while (measureDistance() > 20) {
+  if (measureDistance() > 20) {
     driveFront(drive_speed);
 
     // Seitlich auf Wände kontrollieren
     if (measureDistance_l() < 10) {
       turnRight(turn_speed);
       delay(short_turn_duration);
-      } else if (measureDistance_r() < 10) {
+    } else if (measureDistance_r() < 10) {
       turnLeft(turn_speed);
       delay(short_turn_duration);
     }
@@ -102,36 +110,40 @@ void loop() {
       delay(turn_duration);
       driveStart = millis();
     }
-  }
-
-  // Wenn etwas im Weg ist...
-  stop();
-
-  servo.write(left_left_angle);
-  delay(500);
-  long distance_left_left = measureDistance();
-  //delay(500);
-  servo.write(left_angle);
-  delay(500);
-  long distance_left = measureDistance();
-  //delay(500);
-  servo.write(right_angle);
-  delay(500);
-  long distance_right = measureDistance();
-  //delay(500);
-  servo.write(right_right_angle);
-  delay(500);
-  long distance_right_right = measureDistance();
-  //delay(500);
-
-  servo.write(middle_angle);
-
-  if ((distance_right + distance_right_right) / 2 > (distance_left + distance_left_left) / 2) {
-    turnRight(turn_speed);
   } else {
-    turnLeft(turn_speed);
+
+    // Wenn etwas im Weg ist...
+    stop();
+
+    servo.write(left_left_angle);
+    delay(500);
+    long distance_left_left = measureDistance();
+    //delay(500);
+    servo.write(left_angle);
+    delay(500);
+    long distance_left = measureDistance();
+    //delay(500);
+    servo.write(right_angle);
+    delay(500);
+    long distance_right = measureDistance();
+    //delay(500);
+    servo.write(right_right_angle);
+    delay(500);
+    long distance_right_right = measureDistance();
+    //delay(500);
+
+    servo.write(middle_angle);
+
+    if ((distance_right + distance_right_right) / 2 > (distance_left + distance_left_left) / 2) {
+      turnRight(turn_speed);
+    } else {
+      turnLeft(turn_speed);
+    }
+    delay(turn_duration);
   }
-  delay(turn_duration);
+
+  // Check for GPS messages
+  gps_receive();
 }
 
 void driveFront(int speed) {
@@ -227,4 +239,25 @@ long measureDistance_r() {
   //Serial1.print("Rechts: ");
   //Serial1.println(distance);
   return distance;
+}
+
+void gps_receive() {
+  if (Serial3.available()) {
+    while (Serial3.available()) {
+      gps_buffer[gps_count++] = Serial3.read();
+      if (gps_count == 64) break;
+    }
+    Serial1.write(gps_buffer, gps_count);
+    clearBufferArray();                         // call clearBufferArray function to clear the stored data from the array
+    gps_count = 0;                                  // set counter of while loop to zero 
+  }
+  if (Serial1.available())                 // if data is available on hardware serial port ==> data is coming from PC or notebook
+    Serial3.write(Serial1.read());
+}
+
+void clearBufferArray() {
+  for (int i = 0; i < gps_count; i++)
+  {
+    gps_buffer[i] = NULL;
+  }                      // clear all index of array with command NULL
 }
