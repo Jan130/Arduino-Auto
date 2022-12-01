@@ -4,3 +4,5 @@
 Ersetzen
 ### Rechts
 Fehlmessungen fixen
+## Darstellung der Daten
+- Serial Studio?
