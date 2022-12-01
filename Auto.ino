@@ -60,6 +60,7 @@ void setup() {
   servo.attach(servo_pin);
   servo.write(middle_angle);
 
+  // Bluetooth
   Serial1.begin(9600);
 }
 
@@ -72,14 +73,14 @@ void loop() {
     driveFront(drive_speed);
 
     // Seitlich auf Wände kontrollieren
-    /*if (measureDistance_l() < 10) {
+    if (measureDistance_l() < 10) {
       turnRight(turn_speed);
       delay(short_turn_duration);
-    } else*/ if (measureDistance_r() < 10) {
+      } else if (measureDistance_r() < 10) {
       turnLeft(turn_speed);
       delay(short_turn_duration);
     }
-    
+
     // Nach einer zeit umschauen
     if (millis() - driveStart > 4000) {
       stop();
@@ -191,8 +192,8 @@ long measureDistance() {
   t = pulseIn(echo_pin, HIGH);
   distance = (t / 2) * 0.03432;
 
-  Serial1.print("Vorne: ");
-  Serial1.println(distance);
+  //Serial1.print("Vorne: ");
+  //Serial1.println(distance);
   return distance;
 }
 
@@ -207,8 +208,8 @@ long measureDistance_l() {
   t = pulseIn(echo_pin_l, HIGH);
   distance = (t / 2) * 0.03432;
 
-  Serial1.print("Links: ");
-  Serial1.println(distance);
+  //Serial1.print("Links: ");
+  //Serial1.println(distance);
   return distance;
 }
 
@@ -223,7 +224,7 @@ long measureDistance_r() {
   t = pulseIn(echo_pin_r, HIGH);
   distance = (t / 2) * 0.03432;
 
-  Serial1.print("Rechts: ");
-  Serial1.println(distance);
+  //Serial1.print("Rechts: ");
+  //Serial1.println(distance);
   return distance;
 }
