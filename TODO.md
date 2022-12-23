@@ -1,8 +1,5 @@
 # Todo
-## Ultraschall-Sensoren
-### Links
-Ersetzen
-### Rechts
-Fehlmessungen fixen
+## Hardware
+- GPS-Modul direkt an Bluetooth-Modul?
 ## Darstellung der Daten
 - Serial Studio?
