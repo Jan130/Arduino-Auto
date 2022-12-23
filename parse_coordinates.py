@@ -1,4 +1,4 @@
-input = "15:11:52.971 $GPGGA,141153.000,4803.6142,N,01136.8491,E,2,9,0.92,550.1,M,47.PGSV,3,3,11,10,16,291,23,32,13,320,31,23,11,258,33*4A"
+import sys
 
 def parse_line(s):
     contents = s.split("$")
@@ -45,5 +45,4 @@ def parse_file(name):
             fp.write("%s\n" % item)
 
 if __name__ == "__main__":
-    # create_file([["4803.6142","N","01136.8491","E"],["4803.6142","N","01136.8491","E"]])
-    parse_file("TestLogFuerJan.txt")
+    parse_file(sys.argv[1])
