@@ -11,9 +11,12 @@ def parse_line(s):
 def parse_gpgga(s):
     contents = s.split(",")
     out = [contents[2], contents[3], contents[4], contents[5]]
-    out[0] = int(out[0].split(".")[0][:-2]) + float(out[0].split(".")[0][-2:] + "." + out[0].split(".")[1]) / 60
-    out[2] = int(out[2].split(".")[0][:-2]) + float(out[2].split(".")[0][-2:] + "." + out[2].split(".")[1]) / 60
+    out[0] = convert_coordinates(out[0])
+    out[2] = convert_coordinates(out[2])
     return out
+
+def convert_coordinates(c):
+    return int(c.split(".")[0][:-2]) + float(c.split(".")[0][-2:] + "." + c.split(".")[1]) / 60
 
 def create_gpx(l):
     out = ['<?xml version="1.0" encoding="UTF-8"?>']
