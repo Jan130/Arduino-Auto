@@ -10,7 +10,8 @@ def parse_line(s):
 
 def parse_gpgga(s):
     contents = s.split(",")
-    out = [contents[2], contents[3], contents[4], contents[5]]
+    # Format: latitude, latitude direction, longitude, longitude direction, elevation, number of satellites, hdop
+    out = [contents[2], contents[3], contents[4], contents[5], contents[9], contents[7], contents[8]]
     out[0] = convert_coordinates(out[0])
     out[2] = convert_coordinates(out[2])
     return out
@@ -22,11 +23,14 @@ def create_gpx(l):
     out = ['<?xml version="1.0" encoding="UTF-8"?>']
     out.append('<gpx version="1.1" creator="Jan">')
     out.append("<trk>")
-    out.append("<name>Track1</name>")
+    out.append("<name>Drive Track</name>")
     out.append("<trkseg>")
 
     for e in l:
         out.append('<trkpt lat="{}" lon="{}">'.format(e[0], e[2]))
+        out.append("<ele>{}</ele>".format(e[4]))
+        out.append("<sat>{}</sat>".format(e[5]))
+        out.append("<hdop>{}</hdop>".format(e[6]))
         out.append("</trkpt>")
 
     out.append("</trkseg>")
