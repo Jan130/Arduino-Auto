@@ -1,5 +1,5 @@
 # Todo
 ## Hardware
 - GPS-Modul direkt an Bluetooth-Modul?
-## Darstellung der Daten
-- Serial Studio?
+## Software
+- Fehlerhafte NMEA Nachrichten erkennen und ignorieren
