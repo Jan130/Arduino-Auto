@@ -10,8 +10,16 @@ def parse_line(s):
 
 def parse_gpgga(s):
     contents = s.split(",")
-    # Format: latitude, latitude direction, longitude, longitude direction, elevation, number of satellites, hdop
-    out = [contents[2], contents[3], contents[4], contents[5], contents[9], contents[7], contents[8]]
+    try:
+        # Format: latitude, latitude direction, longitude, longitude direction, elevation, number of satellites, hdop
+        out = [contents[2], contents[3], contents[4], contents[5], contents[9], contents[7], contents[8]]
+    except:
+        return None
+
+    # Break if no coordinates found
+    if out[0] == '' or out[0] == None or out[2] == '' or out[2] == None:
+        return None
+
     out[0] = convert_coordinates(out[0])
     out[2] = convert_coordinates(out[2])
     return out
@@ -21,7 +29,7 @@ def convert_coordinates(c):
 
 def create_gpx(l):
     out = ['<?xml version="1.0" encoding="UTF-8"?>']
-    out.append('<gpx version="1.1" creator="Jan">')
+    out.append('<gpx version="1.1" creator="Jonas, Johannes, Jan">')
     out.append("<trk>")
     out.append("<name>Drive Track</name>")
     out.append("<trkseg>")
